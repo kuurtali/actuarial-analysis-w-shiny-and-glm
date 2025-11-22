@@ -45,21 +45,21 @@ mcfadden <- round(pR2(model_risk)["McFadden"], 3)
 ui <- fluidPage(
   theme = bs_theme(bootswatch = "cyborg"),
   
-  titlePanel(div(HTML("<i class='fa fa-shield-alt'></i> Kasko Risk Yönetim Platformu"))),
+  titlePanel(div(HTML("<i class='fa fa-shield-alt'></i> Kasko Risk Yonetim Platformu"))),
   
   sidebarLayout(
     sidebarPanel(
       width = 3,
-      h4("Müþteri Profili"),
+      h4("Musteri Profili"),
       hr(),
-      selectInput("AGE", "Sürücü Yaþý:", choices = levels(df_clean$AGE)),
+      selectInput("AGE", "Surucu Yasi:", choices = levels(df_clean$AGE)),
       selectInput("GENDER", "Cinsiyet:", choices = levels(df_clean$GENDER)),
-      selectInput("DRIVING_EXPERIENCE", "Sürüþ Tecrübesi:", choices = levels(df_clean$DRIVING_EXPERIENCE)),
-      selectInput("VEHICLE_TYPE", "Araç Tipi:", choices = levels(df_clean$VEHICLE_TYPE)),
-      selectInput("VEHICLE_YEAR", "Araç Yýlý:", choices = levels(df_clean$VEHICLE_YEAR)),
+      selectInput("DRIVING_EXPERIENCE", "Surus Tecrubesi:", choices = levels(df_clean$DRIVING_EXPERIENCE)),
+      selectInput("VEHICLE_TYPE", "Arac Tipi:", choices = levels(df_clean$VEHICLE_TYPE)),
+      selectInput("VEHICLE_YEAR", "Arac Yili:", choices = levels(df_clean$VEHICLE_YEAR)),
       sliderInput("CREDIT_SCORE", "Kredi Skoru (0-1):", min = 0, max = 1, value = 0.5, step = 0.01),
       hr(),
-      actionButton("hesapla", "RÝSKÝ HESAPLA", class = "btn-primary btn-lg", width = "100%")
+      actionButton("hesapla", "RISKI HESAPLA", class = "btn-primary btn-lg", width = "100%")
     ),
     
     mainPanel(
@@ -73,29 +73,29 @@ ui <- fluidPage(
                           uiOutput("sonuc_kutusu"),
                           br(),
                           div(style = "background-color: #222; padding: 15px; border-radius: 10px;",
-                              h4("Yönetici Özeti:"),
-                              p("Bu panel, anlýk müþteri verisine dayalý olarak Hasar Olasýlýðýný (Probability of Default) hesaplar."),
-                              p("Arka planda çalýþan GLM algoritmasý, 10.000 poliçelik tarihsel veri ile eðitilmiþtir.")
+                              h4("Yonetici Ozeti:"),
+                              p("Bu panel, anlik musteri verisine dayali olarak Hasar Olasiligini (Probability of Default) hesaplar."),
+                              p("Arka planda calisan GLM algoritmasi, 10.000 policelik tarihsel veri ile egitilmistir.")
                           )
                    ),
                    column(7, 
                           h4("Risk Metre"),
                           plotlyOutput("risk_gauge", height = "250px"),
                           br(),
-                          h4("Portföy Ýçindeki Konumu"),
+                          h4("Portfoy Icindeki Konumu"),
                           plotlyOutput("risk_dagilim", height = "250px")
                    )
                  )
         ),
         
-        tabPanel("Veri Keþfi (EDA)", 
+        tabPanel("Veri Kesfi (EDA)", 
                  br(),
                  fluidRow(
                    column(4, 
                           wellPanel(
-                            h4("Deðiþken Analizi"),
-                            p("Hangi faktörün hasar üzerindeki etkisini görmek istiyorsunuz?"),
-                            selectInput("eda_x", "Ýncelenecek Deðiþken:", 
+                            h4("Degisken Analizi"),
+                            p("Hangi faktorun hasar uzerindeki etkisini gormek istiyorsunuz?"),
+                            selectInput("eda_x", "Incelenecek Degisken:", 
                                         choices = names(df_clean)[!names(df_clean) %in% c("OUTCOME", "Risk_Skoru")],
                                         selected = "AGE")
                           )
@@ -106,22 +106,22 @@ ui <- fluidPage(
                  )
         ),
         
-        tabPanel("Ýstatistiksel Kanýt", 
+        tabPanel("Istatistiksel Kanit", 
                  br(),
                  fluidRow(
                    column(6, 
-                          h4("ROC Eðrisi (Model Baþarýsý)"),
+                          h4("ROC Egrisi (Model Basarisi)"),
                           div(style = "background-color: #303030; padding: 10px; border-radius: 5px; margin-bottom: 10px;",
                               p(strong("AUC Skoru:"), auc_score),
                               p(style="font-size: 12px; color: #aaa;", 
-                                "Bu eðri, modelin 'Hasarlý' ve 'Hasarsýz' müþterileri ne kadar iyi ayýrt ettiðini gösterir. 0.8 üzerindeki bir AUC, modelin ayýrt etme gücünün 'Mükemmel' seviyede olduðunu kanýtlar.")
+                                "Bu egri, modelin 'Hasarli' ve 'Hasarsiz' musterileri ne kadar iyi ayirt ettigini gosterir. 0.8 uzerindeki bir AUC, modelin ayirt etme gucunun 'Mukemmel' seviyede oldugunu kanitlar.")
                           ),
                           plotOutput("roc_plot_static")
                    ),
                    column(6,
-                          h4("Risk Faktörleri Etki Düzeyi"),
+                          h4("Risk Faktorleri Etki Duzeyi"),
                           div(style = "background-color: #303030; padding: 10px; border-radius: 5px; margin-bottom: 10px;",
-                              p("Aþaðýdaki grafik, hangi deðiþkenin model üzerinde en fazla aðýrlýða sahip olduðunu gösterir.")
+                              p("Asagidaki grafik, hangi degiskenin model uzerinde en fazla agirliga sahip oldugunu gosterir.")
                           ),
                           plotOutput("var_imp_plot")
                    )
@@ -133,12 +133,12 @@ ui <- fluidPage(
                  DTOutput("veri_tablosu")
         ),
         
-        tabPanel("Model Detaylarý", 
+        tabPanel("Model Detaylari", 
                  br(),
-                 h3("Regresyon Analizi Çýktýlarý"),
+                 h3("Regresyon Analizi Ciktilari"),
                  verbatimTextOutput("model_ozeti"),
                  br(),
-                 h3("Odds Ratios (Risk Çarpanlarý)"),
+                 h3("Odds Ratios (Risk Carpanlari)"),
                  verbatimTextOutput("model_yorumlari")
         )
       )
@@ -177,10 +177,10 @@ server <- function(input, output, session) {
     olasilik <- risk_hesapla()
     yuzde <- round(olasilik * 100, 1)
     renk <- if(yuzde > 50) "#d9534f" else "#5cb85c"
-    baslik <- if(yuzde > 50) "YÜKSEK RÝSK!" else "DÜÞÜK RÝSK"
+    baslik <- if(yuzde > 50) "YUKSEK RISK!" else "DUSUK RISK"
     
     div(style = paste0("text-align: center; background-color: ", renk, "; padding: 30px; border-radius: 15px; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.5);"),
-        h4("TAHMÝN EDÝLEN KAZA ÝHTÝMALÝ", style = "opacity: 0.9; margin-bottom: 20px;"),
+        h4("TAHMIN EDILEN KAZA IHTIMALI", style = "opacity: 0.9; margin-bottom: 20px;"),
         h1(paste0("%", yuzde), style = "font-size: 70px; font-weight: bold; margin: 0;"),
         hr(style = "border-top: 2px solid white; opacity: 0.5;"),
         h2(baslik, style = "font-weight: bold;")
@@ -217,8 +217,8 @@ server <- function(input, output, session) {
     p <- ggplot(df_clean, aes(x = Risk_Skoru)) +
       geom_histogram(fill = "#4b4b4b", color = "white", bins = 30, alpha = 0.7) +
       geom_vline(xintercept = kullanici_riski, color = "red", size = 1.5, linetype = "dashed") +
-      annotate("text", x = kullanici_riski, y = 100, label = "Sen Buradasýn", color = "red", vjust = -1) +
-      labs(x = "Risk Skoru (%)", y = "Kiþi Sayýsý", title = "Tüm Müþteriler Ýçindeki Konumunuz") +
+      annotate("text", x = kullanici_riski, y = 100, label = "Sen Buradasin", color = "red", vjust = -1) +
+      labs(x = "Risk Skoru (%)", y = "Kisi Sayisi", title = "Tum Musteriler Icindeki Konumunuz") +
       theme_minimal() +
       theme(
         text = element_text(color = "white"),
@@ -233,7 +233,7 @@ server <- function(input, output, session) {
     req(input$eda_x)
     p <- ggplot(df_clean, aes(x = .data[[input$eda_x]], fill = OUTCOME)) +
       geom_bar(position = "fill") +
-      labs(title = paste(input$eda_x, "Deðiþkenine Göre Hasar Oranlarý"), 
+      labs(title = paste(input$eda_x, "Degiskenine Gore Hasar Oranlari"), 
            y = "Oran", x = input$eda_x, fill = "Hasar Durumu") +
       scale_fill_manual(values = c("#5cb85c", "#d9534f"), labels = c("Yok", "Var")) +
       theme_minimal() +
@@ -254,13 +254,13 @@ server <- function(input, output, session) {
     ggplot(varImp_obj, aes(x = reorder(rownames(varImp_obj), Overall), y = Overall)) +
       geom_bar(stat = "identity", fill = "#007bff") +
       coord_flip() +
-      labs(x = "Deðiþkenler", y = "Etki Gücü") +
+      labs(x = "Degiskenler", y = "Etki Gucu") +
       theme_minimal() +
       theme(text = element_text(color = "white"), axis.text = element_text(color = "white"))
   }, bg = "transparent")
   
   output$roc_plot_static <- renderPlot({
-    plot(roc_obj, main = "ROC Eðrisi", col = "#00C851", lwd = 3, col.main="white", col.axis="white", col.lab="white")
+    plot(roc_obj, main = "ROC Egrisi", col = "#00C851", lwd = 3, col.main="white", col.axis="white", col.lab="white")
   }, bg = "transparent")
 
   output$veri_tablosu <- renderDT({
