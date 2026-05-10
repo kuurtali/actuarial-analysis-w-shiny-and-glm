@@ -1,0 +1,16 @@
+# Normalize line endings: LF in repo, CRLF on Windows checkout
+* text=auto eol=lf
+
+# Explicitly text files
+*.R      text eol=lf
+*.r      text eol=lf
+*.md     text eol=lf
+*.csv    text eol=lf
+*.gitignore text eol=lf
+
+# Binary files - never diff
+*.png    binary
+*.jpg    binary
+*.pdf    binary
+*.zip    binary
+*.rds    binary

@@ -1,3 +1,8 @@
+# encoding: UTF-8
+# Kasko Risk Yonetim Platformu — Shiny App
+# GLM-based insurance risk scoring with interactive dashboard
+# Packages: tidyverse, shiny, bslib, DT, caret, pROC, plotly, pscl
+
 if (!require("tidyverse")) install.packages("tidyverse")
 if (!require("shiny")) install.packages("shiny")
 if (!require("bslib")) install.packages("bslib")
@@ -216,7 +221,7 @@ server <- function(input, output, session) {
     
     p <- ggplot(df_clean, aes(x = Risk_Skoru)) +
       geom_histogram(fill = "#4b4b4b", color = "white", bins = 30, alpha = 0.7) +
-      geom_vline(xintercept = kullanici_riski, color = "red", size = 1.5, linetype = "dashed") +
+      geom_vline(xintercept = kullanici_riski, color = "red", linewidth = 1.5, linetype = "dashed") +
       annotate("text", x = kullanici_riski, y = 100, label = "Sen Buradasin", color = "red", vjust = -1) +
       labs(x = "Risk Skoru (%)", y = "Kisi Sayisi", title = "Tum Musteriler Icindeki Konumunuz") +
       theme_minimal() +
