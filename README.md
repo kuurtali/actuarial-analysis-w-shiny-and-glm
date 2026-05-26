@@ -145,8 +145,12 @@ actuarial-analysis-w-shiny-and-glm/
 
 ## 🔗 Related Projects
 
-- **[ADAS Pricing Paradox (Vol 1)](https://github.com/kuurtali/ADAS-Pricing-Paradox)** — End-to-end actuarial pricing analysis investigating the frequency–severity trade-off in ADAS-equipped vehicles (100K policies, Poisson + Gamma GLM).
-- **[VOL2 — ADAS Pricing Paradox (Advanced Edition)](https://github.com/kuurtali/VOL2-ADAS-Pricing-Paradox)** — Extended analysis with 200K policies, GLM interaction terms, Gini Index, and Lift Charts.
+| Project | Description |
+|---------|-------------|
+| [ADAS Pricing Paradox (VOL1)](https://github.com/kuurtali/ADAS-Pricing-Paradox) | Actuarial ADAS pricing: 100K policies, Poisson + Gamma GLM, frequency–severity trade-off |
+| [VOL2 — ADAS Advanced](https://github.com/kuurtali/VOL2-ADAS-Pricing-Paradox) | Extended ADAS: 200K policies, Gini Index, Lift Charts, interaction terms |
+| [Tubitak-2209A-MCAware](https://github.com/kuurtali/Tubitak-2209A-MCAware) | TÜBİTAK 2209-A: anti-predictive behavior in DL stock prediction on BIST |
+| [Direction Forecasting BIST-BES](https://github.com/kuurtali/direction-forecasting-bist-bes) | Academic paper: ARIMA vs LSTM vs 1D-CNN on BIST & pension funds |
 
 ---
 
