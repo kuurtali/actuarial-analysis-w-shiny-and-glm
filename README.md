@@ -4,7 +4,11 @@
 
 > *How likely is a given customer to file an insurance claim — and which risk factors drive that probability?*
 
-### [🚀 Live Demo - Click Here to Interact with the Dashboard](https://your-username.shinyapps.io/actuarial-analysis-w-shiny-and-glm/)
+<p align="center">
+  <a href="https://5pax70-mehmet0ali-kurt.shinyapps.io/shiny_app/">
+    <img src="https://img.shields.io/badge/🚀_Live_Demo-Online-brightgreen?style=for-the-badge" alt="Live Demo" />
+  </a>
+</p>
 *(Note: If the link is not active, please deploy the app using `rsconnect` to your shinyapps.io account.)*
 
 ---
