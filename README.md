@@ -17,7 +17,6 @@
 
 > *How likely is a given customer to file an insurance claim — and which risk factors drive that probability?*
 
-*(Note: If the Live Demo link is sleeping, it will wake up in a few seconds upon clicking.)*
 
 ---
 
