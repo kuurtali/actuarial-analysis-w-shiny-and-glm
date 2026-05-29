@@ -6,16 +6,18 @@
   <img src="https://img.shields.io/badge/GLM%20Logistic%20Regression-FF6F00?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Actuarial%20Science-brightgreen?style=for-the-badge" />
 </p>
-**An interactive insurance risk scoring platform** built with R Shiny and Generalized Linear Models (Logistic Regression). The system predicts claim probability in real-time and provides a comprehensive dashboard for underwriters and risk managers.
-
-> *How likely is a given customer to file an insurance claim — and which risk factors drive that probability?*
 
 <p align="center">
   <a href="https://5pax70-mehmet0ali-kurt.shinyapps.io/shiny_app/">
     <img src="https://img.shields.io/badge/🚀_Live_Demo-Online-brightgreen?style=for-the-badge" alt="Live Demo" />
   </a>
 </p>
-*(Note: If the link is not active, please deploy the app using `rsconnect` to your shinyapps.io account.)*
+
+**An interactive insurance risk scoring platform** built with R Shiny and Generalized Linear Models (Logistic Regression). The system predicts claim probability in real-time and provides a comprehensive dashboard for underwriters and risk managers.
+
+> *How likely is a given customer to file an insurance claim — and which risk factors drive that probability?*
+
+*(Note: If the Live Demo link is sleeping, it will wake up in a few seconds upon clicking.)*
 
 ---
 
