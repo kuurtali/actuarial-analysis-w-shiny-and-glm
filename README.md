@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" />
   <img src="https://img.shields.io/badge/Shiny-00449E?style=for-the-badge&logo=R&logoColor=white" />
-  <img src="https://img.shields.io/badge/GLM%20Logistic-FF6F00?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GLM%20Logistic%20Regression-FF6F00?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Actuarial%20Science-brightgreen?style=for-the-badge" />
 </p>
 
@@ -16,6 +16,7 @@
 **An interactive insurance risk scoring platform** built with R Shiny and Generalized Linear Models (Logistic Regression). The system predicts claim probability in real-time and provides a comprehensive dashboard for underwriters and risk managers.
 
 > *How likely is a given customer to file an insurance claim — and which risk factors drive that probability?*
+
 
 ---
 
