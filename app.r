@@ -121,7 +121,7 @@ ui <- fluidPage(
                               p(style="font-size: 12px; color: #aaa;", 
                                 "Bu egri, modelin 'Hasarli' ve 'Hasarsiz' musterileri ne kadar iyi ayirt ettigini gosterir. 0.8 uzerindeki bir AUC, modelin ayirt etme gucunun 'Mukemmel' seviyede oldugunu kanitlar.")
                           ),
-                          plotOutput("roc_plot_static")
+                          plotOutput("roc_plot_interactive")
                    ),
                    column(6,
                           h4("Risk Faktorleri Etki Duzeyi"),
