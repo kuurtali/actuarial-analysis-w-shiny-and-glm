@@ -1,5 +1,8 @@
 # 🛡️ Actuarial Risk Analysis & Decision Support System (GLM + Shiny)
 
+[Portfolio](https://github.com/kuurtali) · [Report an issue](https://github.com/kuurtali/actuarial-analysis-w-shiny-and-glm/issues)
+
+
 <p align="center">
   <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" />
   <img src="https://img.shields.io/badge/Shiny-00449E?style=for-the-badge&logo=R&logoColor=white" />
@@ -22,19 +25,18 @@
 
 ## 📌 Project Objective
 
-To develop a statistically valid model for predicting **Probability of Default (Claim Frequency)** and to deploy this model as a user-friendly web application using R Shiny. The system bridges the gap between complex statistical modeling and operational decision-making.
+Demonstrate **claim occurrence probability** with a binomial logistic model and an interactive Shiny interface. The binary target is whether a claim occurred; it does not measure credit default or the number of claims.
 
 ---
 
 ## 📊 Model Performance & Diagnostics
 
-The model's validity and discriminatory power have been rigorously tested using standard actuarial metrics:
+The current `app.r` fits the model and calculates ROC/AUC on the **same cleaned dataset**. The reported values below are in-sample diagnostics, not held-out performance. An independent test split or cross-validation is still needed.
 
 | Metric | Value | Interpretation |
 |--------|-------|----------------|
-| **AUC Score** | 0.828 | Excellent discriminatory power between claim / non-claim segments |
-| **McFadden R²** | 0.22 | Good model fit for logistic regression standards |
-| **VIF** | < 2.0 (all vars) | No multicollinearity detected |
+| **AUC Score** | 0.828 | Reported in-sample claim/non-claim ranking |
+| **McFadden R²** | 0.22 | Reported in-sample pseudo-R² |
 
 > An AUC of 0.828 means the model correctly ranks a random "claim" customer above a random "non-claim" customer **82.8% of the time**.
 
@@ -69,7 +71,7 @@ The Shiny dashboard contains **5 interactive tabs**:
 - Powered by Plotly for zoom, hover, and export
 
 ### 3. İstatistiksel Kanıt
-- **ROC Curve** with AUC annotation — visual proof of model discriminatory power
+- **ROC Curve** with AUC annotation — in-sample model diagnostic
 - **Variable Importance** chart — which predictors carry the most weight in the model
 
 ### 4. Ham Veri
@@ -101,8 +103,8 @@ The Shiny dashboard contains **5 interactive tabs**:
 ## 📊 Methodology
 
 ### Data
-- **Source:** `Car_Insurance_Claim.csv` — real-world insurance portfolio data
-- **Records:** ~10,000 policies after cleaning
+- **Input:** `Car_Insurance_Claim.csv`. The repository does not document its original provider or redistribution terms; provenance needs to be recorded before describing it as a real insurer's portfolio.
+- **Records:** The app filters the input before fitting; the final count depends on those filters.
 - **Target Variable:** `OUTCOME` (0 = No Claim, 1 = Claim)
 
 ### Data Cleaning
