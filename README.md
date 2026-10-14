@@ -1,6 +1,6 @@
 # 🛡️ Actuarial Risk Analysis & Decision Support System (GLM + Shiny)
 
-[Portfolio](https://github.com/kuurtali) · [Report an issue](https://github.com/kuurtali/actuarial-analysis-w-shiny-and-glm/issues)
+[Portfolio](https://github.com/kuurtali) · [All projects](https://github.com/kuurtali#projects) · [Report an issue](https://github.com/kuurtali/actuarial-analysis-w-shiny-and-glm/issues)
 
 
 <p align="center">
